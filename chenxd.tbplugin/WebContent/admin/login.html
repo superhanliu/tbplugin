@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>µÇÂ¼</title>
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<style type="text/css">
+.logindiv{
+    margin-left: 40%;
+    margin-top: 10%;
+}
+.row{
+	width:300px;
+}
+.label{
+    width: 100px;
+    float: left;
+}
+.button{
+	    margin-top: 20px;
+    margin-left: 50px;
+    width: 100px;
+    text-align: center;
+    background: #abcdef;
+    cursor: pointer;
+}
+
+.contentdiv{
+	display:none
+}
+</style>
+</head>
+
+<body>
+	<div>
+		<div class="logindiv">
+			<h1>¹ÜÀíÔ±µÇÂ¼</h1>
+			<div class="formdiv">
+				<div class="row">
+					<div class="label">ÓÃ»§Ãû£º</div>
+					<input type="text" id="user"/>
+				</div>
+				<div>
+					<div class="label">ÃÜÂë£º</div>
+					<input type="password" id="pwd"/>
+				</div>
+				<div>
+					<div class="button" id="loginBtn">µÇÂ¼</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="contentdiv">
+		
+		</div>
+	</div>
+</body>
+<script>
+$("#loginBtn").click(function(){
+	var user = $.trim($("#user").val());
+	var pwd = $.trim($("#pwd").val());
+	if(user==""){
+		$("#user").focus();
+		return;
+	}
+	if(pwd==""){
+		$("#pwd").focus();
+		return;
+	}
+
+	$.ajax({
+		  type: "POST",
+		  url: ".//user/login.do",
+		  data: { user: user, pwd: pwd}
+		}).done(function( msg ) {
+		  console.debug( "login result:"+msg);
+		  
+		  if(msg=="success"){
+			  $.ajax({
+				  url: "main.html",
+				  cache: true
+				}).done(function( html ) {
+					$("div.logindiv").hide();
+				  	$("div.contentdiv").css("display","").html(html);
+				});
+		  }else{
+			  alert("µÇÂ¼Ê§°Ü");
+			  $("#user").focus();
+			  return;
+		  }
+		}).fail(function(jqXHR, textStatus) {
+			  alert( "Request failed: " + textStatus );
+		});
+});
+</script>
+</html>
