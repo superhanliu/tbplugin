@@ -38,7 +38,7 @@
 				<div class="row">
 					<div class="label">采集URL：</div>
 					<input type="text" id="url" class="input-text"/>
-					<input type="button" value="get"/>
+					<input type="button" value="采集" id="collectBtn"/>
 				</div>
 				<div>
 					<div class="label">内容发布：</div>
@@ -49,47 +49,47 @@
 						<tr>
 							<td>url1:</td>
 							<td><input type="text" id="url1" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>url2:</td>
 							<td><input type="text" id="url2" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>url3:</td>
 							<td><input type="text" id="url3" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>url4:</td>
 							<td><input type="text" id="url4" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>url5:</td>
 							<td><input type="text" id="url5" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>url6:</td>
 							<td><input type="text" id="url6" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>url7:</td>
 							<td><input type="text" id="url7" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>logo:</td>
 							<td><input type="text" id="logo" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 						<tr>
 							<td>banner:</td>
 							<td><input type="text" id="banner" class="input-text"></td>
-							<td><a href='#' target="_blank">open</a></td>
+							<td><a href='#' target="_blank">open</a><span class="save-btn">save</span></td>
 						</tr>
 					</table>
 				</div>
@@ -97,7 +97,7 @@
 					<div class="label">升级设置</div>
 					<input type="text" id="ver" placeholder="输入新版本号">
 					<input type="text" id="fileurl" placeholder="新版本下载地址">
-					<input type="button" value="设置"/>
+					<input type="button" value="设置" id="updateBtn"/>
 				</div>
 			</div>
 		</div>
@@ -121,7 +121,15 @@ $.ready(function(){
 			}
 		});
 	});
-	
+	$("#collectBtn").click(function(){
+		alert('collect');
+	});
+	$("#updateBtn").click(function(){
+		alert('update');
+	});
+	$("span.save-btn").click(function(){
+		alert('save');
+	});
 });
 </script>
 </html>
