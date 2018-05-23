@@ -10,12 +10,10 @@ import org.nutz.mvc.Setup;
  */
 public class PluginAppSetup implements Setup{
 	
-	@Override
 	public void destroy(NutConfig arg0) {
 		
 	}
 
-	@Override
 	public void init(NutConfig arg0) {
 //		arg0.getAppRoot();
 	}

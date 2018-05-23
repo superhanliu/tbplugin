@@ -1,9 +1,10 @@
 package chenxd.tbplugin.entity;
 
+import org.nutz.dao.entity.annotation.ColDefine;
 import org.nutz.dao.entity.annotation.Table;
 
 /*
- * ���̻
+ * 店铺活动
  * @author Administrator
  *
  */
@@ -13,6 +14,8 @@ public class ShopActivity {
 	private String shopid;
 	private String activityId;
 	private long addtime;
+	@ColDefine(width=500)
+	private String activityContent;
 	
 	public String getShopid() {
 		return shopid;

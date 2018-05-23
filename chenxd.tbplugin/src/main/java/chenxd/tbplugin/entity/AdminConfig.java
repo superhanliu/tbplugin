@@ -5,7 +5,7 @@ import org.nutz.dao.entity.annotation.Name;
 import org.nutz.dao.entity.annotation.Table;
 
 /**
- * ¹ÜÀíÅäÖÃ
+ * å‚æ•°é…ç½®
  * 
  * @author Administrator
  *
